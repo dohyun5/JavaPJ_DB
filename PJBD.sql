@@ -26,7 +26,8 @@ board_no number(7) primary key,
 board_title varchar2(200),
 board_content varchar2(4000),
 board_date date default sysdate,
-board_views number(7));
+board_views number(7),
+trade_ing varchar2(20));
 
 
 create table reply(
