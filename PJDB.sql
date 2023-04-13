@@ -27,7 +27,8 @@ board_title varchar2(200),
 board_content varchar2(4000),
 board_date date default sysdate,
 board_views number(7),
-trade_ing varchar2(20));
+trade_ing varchar2(20),
+trade_fname varchar2(200));
 
 
 create table reply(
@@ -121,3 +122,6 @@ commit;
 
 delete from reply;
 
+update tradeboard set trade_ing = '거래완료',trade_fname = '사용자5' where board_no = 2;
+
+select * from tradeboard where member_id = '1000' or trade_fname = '사용자5' ORDER BY board_no;
