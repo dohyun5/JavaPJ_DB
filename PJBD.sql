@@ -46,7 +46,8 @@ rep_no number(30),
 board_no number(7),
 rep_content varchar2(2000),
 rep_date date default sysdate,
-CONSTRAINT fk_tradeboard_no foreign key(board_no) references tradeboard (board_no)ON DELETE cascade);
+CONSTRAINT fk_tradeboard_no foreign key(board_no) references tradeboard 
+(board_no)ON DELETE cascade);
 
 create or replace trigger BN
 after update of board_no on board for each row
