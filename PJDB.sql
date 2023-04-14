@@ -76,12 +76,12 @@ drop table tradereply;
 commit;
 
 insert into member values ('root','root','관리자','관리자','없음','A');
-insert into member values ('1000','1000','사용자','사용자','없음','B');
-insert into member values ('1001','1001','사용자1','사용자1','없음','C');
-insert into member values ('1002','1002','사용자2','사용자2','없음','C');
-insert into member values ('1003','1003','사용자3','사용자3','없음','C');
-insert into member values ('1004','1004','사용자4','사용자4','없음','C');
-insert into member values ('1005','1005','사용자5','사용자5','없음','B');
+insert into member values ('1000','1000','최판매자','판매자','신청가능','B');
+insert into member values ('1001','1001','신구매자','구매자','신청가능','B');
+insert into member values ('1002','1002','박반','일반','신청가능','C');
+insert into member values ('1003','1003','이번','이번','신청가능','C');
+insert into member values ('1004','1004','김삼번','삼번','신청가능','C');
+insert into member values ('1005','1005','못봄','못봄','신청가능','B');
 
 sysdate;
 
@@ -113,6 +113,16 @@ from tradereply;
 select *
 from tradeboard;
 
+delete tradeboard;
+commit;
+
+delete board;
+delete tradeboard;
+delete reply;
+delete tradereply;
+
+
+
 insert into reply values ('root','관리자',(SELECT NVL(MAX(rep_no)+1,1) FROM reply where board_no = 4),4,'첫댓',sysdate);
 
 SELECT NVL(MAX(rep_no)+1,1) FROM reply where board_no = 4;
@@ -124,8 +134,8 @@ delete from reply;
 
 update tradeboard set trade_ing = '거래완료',trade_fname = '사용자5' where board_no = 2;
 
-select * from tradeboard where member_id = '1000' or trade_fname = '사용자5' ORDER BY board_no;
+select * from tradeboard where member_id = '123' or trade_fname = '사용자' ORDER BY board_no;
 
 commit;
 
-
+delete member;
