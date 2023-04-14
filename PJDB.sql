@@ -117,11 +117,15 @@ insert into reply values ('root','관리자',(SELECT NVL(MAX(rep_no)+1,1) FROM r
 
 SELECT NVL(MAX(rep_no)+1,1) FROM reply where board_no = 4;
 
-
 commit;
+
 
 delete from reply;
 
 update tradeboard set trade_ing = '거래완료',trade_fname = '사용자5' where board_no = 2;
 
 select * from tradeboard where member_id = '1000' or trade_fname = '사용자5' ORDER BY board_no;
+
+commit;
+
+
