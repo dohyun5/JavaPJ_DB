@@ -109,6 +109,11 @@ join hr.departments d
 on d.department_id = e.department_id
 group by d.department_name;
 
+--권한주기 hr에서
+select * from employees;
 
 
+grant select on employees to dev;
+grant select on departments to dev;
+--권한주기
 
