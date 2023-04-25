@@ -94,7 +94,20 @@ values('User4@email.com', '1234', '최길동', '010-4444-4444','User');
 insert into members (email, password, name, phone, auth)
 values('admin@email.com', '1234', '관리자', '010-5555-5555','Admin');
 
+update tbl_reply
+set reply = #{reply}
+where reply_no = #{replyNo};
 
+
+select * from hr.employees;
+select * from hr.departments;
+
+--부서별 인원 현황
+select d.department_name, count(*) as cnt
+from hr.employees e
+join hr.departments d
+on d.department_id = e.department_id
+group by d.department_name;
 
 
 
