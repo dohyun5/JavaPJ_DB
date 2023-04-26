@@ -117,3 +117,19 @@ grant select on employees to dev;
 grant select on departments to dev;
 --권한주기
 
+create table events(
+title varchar2(100) not null,
+start_date varchar2(20) not null,
+end_date varchar2(20)
+);
+
+insert into events values('약속1','2023-04-05','null');
+insert into events values('약속2','2023-04-05T20:00:00','2023-04-05T22:00:00');
+
+commit;
+
+delete from events where title='약속1'; 
+--and start_date='2023-04-10' and end_date = '2023-04-12';
+
+select * from events;
+
