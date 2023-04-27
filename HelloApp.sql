@@ -146,24 +146,34 @@ product_img varchar2(2000) default null
 
 
 insert into tbl_product
-values(1, 'aaa', 'aaaa', 100000,60000,5,'1.jpg');
+values(1, '케냐 피베리','오렌지 시트러스한 산미가 특징', 52,41,5,'1.jpg');
 
 insert into tbl_product
-values(2, 'bbb', 'aaaa', 90000,60000,5,'2.jpg');
+values(2, '에티오피아 예가체프 G2', '부드러운 신 맛과 꽃, 과실의 향이 특징', 50,44,3,'2.jpg');
 
 insert into tbl_product
-values(3, 'ccc', 'aaaa', 700000,40000,3,'3.jpg');
+values(3, '브라질 세하도 파인컵 NY2', '고소한 너트향, 카라멜의 단맛, 산뜻한 산미가 균형일 이루는 것이 특징', 64,49,3,'3.jpg');
 
 insert into tbl_product
-values(4, 'ddd', 'aaaa', 800000,80000,4,'4.jpg');
+values(4, '콜롬비아 수프리모', '적포도 향과 메이플시럽, 다크초코의 향이 잘 어우러진 것이 특징', 70,51,5,'4.jpg');
 
+insert into tbl_product
+values(5, '과테말라 안티구아', '뛰어난 감칠맛과 부드러운 단맛에 중후한 바디감이 특징', 57,48,4,'5.jpg');
 
+insert into tbl_product
+values(6, '코스타리카 따라주 SHB', '열대과일의 산미 카카오의 씁쓸함이 느껴지는 것이 특징', 80,71,2,'6.jpg');
+
+insert into tbl_product
+values(7, '인도네시아 만델링 G1', '밀크초코의 부드러움  그러나 묵직한 바디감이 특징', 80,73,5,'7.jpg');
+
+insert into tbl_product
+values(8, '인도 몬순 말라바르 AA', '복합적인 너티향과 부드러운 단맛이 특징', 48,43,1,'8.jpg');
 
 commit;
 
-select * from tbl_product;
+select * from tbl_product order by product_score desc;
 
-delete from tbl_product where product_no = 1;
+delete from tbl_product where product_no = 8;
 
 drop table tbl_product;
 
