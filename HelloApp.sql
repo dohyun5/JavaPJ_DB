@@ -133,3 +133,38 @@ delete from events where title='약속1';
 
 select * from events;
 
+create table tbl_product(
+product_no number primary key,
+product_name varchar2(200) not null,
+product_content varchar2(3000) not null,
+product_price number not null,
+product_dprice number not null,
+product_score number(1) not null,
+product_img varchar2(2000) default null
+);
+
+
+
+insert into tbl_product
+values(1, 'aaa', 'aaaa', 100000,60000,5,'1.jpg');
+
+insert into tbl_product
+values(2, 'bbb', 'aaaa', 90000,60000,5,'2.jpg');
+
+insert into tbl_product
+values(3, 'ccc', 'aaaa', 700000,40000,3,'3.jpg');
+
+insert into tbl_product
+values(4, 'ddd', 'aaaa', 800000,80000,4,'4.jpg');
+
+
+
+commit;
+
+select * from tbl_product;
+
+delete from tbl_product where product_no = 1;
+
+drop table tbl_product;
+
+select * from tbl_product where product_no = 1;
